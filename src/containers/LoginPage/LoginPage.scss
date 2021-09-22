@@ -1,0 +1,82 @@
+.loginForm {
+  width: max-content;
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 24px -3px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  text-align: center;
+
+  .loginForm h1 {
+    color: #000;
+    font-weight: 00;
+  }
+
+  .loginFormInput {
+    display: block;
+    background: #efefef;
+    margin: 20px auto;
+    text-align: center;
+    width: 100%;
+    padding: 14px 10px;
+    outline: none;
+    font-weight: 500;
+    border-radius: 8px;
+  }
+
+  .loginFormInput:focus::placeholder {
+    color: transparent;
+  }
+
+  .caston-input {
+    position: relative;
+  }
+
+  .showPassword {
+    position: absolute;
+    right: 1em;
+    top: 0.65em;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+  }
+
+  .rememberRecover {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .remembersBlock {
+    display: flex;
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+  }
+
+  .forgotStart {
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    color: #000;
+  }
+
+  .regBlock {
+    display: flex;
+    justify-content: center;
+  }
+
+  .register {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin-right: 8px;
+  }
+
+  .signup {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: rgb(28, 13, 165);
+    text-decoration: underline;
+  }
+}

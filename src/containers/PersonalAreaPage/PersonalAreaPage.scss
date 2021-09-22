@@ -1,0 +1,30 @@
+.persPage {
+  display: flex;
+  padding-top: 20px;
+  font-size: 30px;
+  color: white;
+  margin-bottom: 22px;
+  .helloBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  strong {
+    padding-top: 8px;
+    font-size: 35px;
+  }
+
+  .exitBtn {
+    display: flex;
+    align-items: center;
+    width: 90px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+    margin-bottom: 15px;
+  }
+}

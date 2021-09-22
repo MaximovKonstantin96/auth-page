@@ -1,38 +1,60 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: unset;
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  outline: unset;
+  border: 0;
+}
+
+input,
+button,
+textarea {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+}
+
+main {
+  padding: 10px;
+  min-height: calc(100vh - 50px);
+  background: url("https://phonoteka.org/uploads/posts/2021-07/thumbs/1625518241_33-phonoteka-org-p-zastavki-na-telefon-serie-krasivie-zastavk-33.jpg")
+    no-repeat center;
+  background-size: cover;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.blackBtn {
+  width: 100%;
+  height: 48px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: black;
   color: white;
+  transition: 0.2s;
+  margin-bottom: 15px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.blackBtn:hover {
+  background-color: rgba(1, 1, 1, 0.8);
 }

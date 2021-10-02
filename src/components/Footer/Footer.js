@@ -1,4 +1,4 @@
-import styles from "./Footer.module.css";
+import "./Footer.scss";
 
 export const Footer = ({ year }) => {
   return (

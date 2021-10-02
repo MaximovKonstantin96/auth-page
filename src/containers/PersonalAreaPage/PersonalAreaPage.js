@@ -12,13 +12,12 @@ export const PersonalAreaPage = ({
     localStorage.setItem("isLoggedIn", false);
     setIsLoggedIn(false);
   };
-  console.log(userName);
 
   return (
     <div className="persPage">
       {isLoggedIn ? (
         <nav>
-          <div className="helloBlock">
+          <div className="userExit">
             <h1>Добро пожаловать, </h1> &nbsp;<strong>{userName}</strong>
           </div>
           <NavLink className="exitBtn" onClick={handleLogOut} exact to="/">

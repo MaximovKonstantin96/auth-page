@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { authService } from "../../service/auth";
 import NumberFormat from "react-number-format";
 import "./RegisterPage.scss";
+import { CloudDownloadOutlined } from "@material-ui/icons";
 
-export const RegisterPage = ({ history, setIsLoggedIn }) => {
-  const [phone, setPhone] = useState("");
+export const RegisterPage = ({ phone, setPhone, history, setIsLoggedIn }) => {
   const [password, setPassword] = useState("");
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
@@ -13,7 +13,7 @@ export const RegisterPage = ({ history, setIsLoggedIn }) => {
   const [error, setError] = useState(null);
 
   const handlePhoneChange = (e) => {
-    setPhone(e.target.value);
+    setPhone(e.value);
   };
 
   const handlePasswordChange = (e) => {
@@ -33,10 +33,10 @@ export const RegisterPage = ({ history, setIsLoggedIn }) => {
 
     try {
       const data = await authService.register({
-        phone,
-        password,
-        first_name,
-        last_name,
+        phone: "7" + phone,
+        password: password,
+        first_name: first_name,
+        last_name: last_name,
       });
 
       localStorage.setItem("token", data.token);
@@ -97,6 +97,7 @@ export const RegisterPage = ({ history, setIsLoggedIn }) => {
             mask="_"
             inputmode="numeric"
             onValueChange={handlePhoneChange}
+            value={phone}
             required
           />
         </div>
@@ -106,6 +107,7 @@ export const RegisterPage = ({ history, setIsLoggedIn }) => {
             type="password"
             placeholder="Пароль"
             onChange={handlePasswordChange}
+            value={password}
             required
           />
           <label className="showPassword">
@@ -134,10 +136,7 @@ export const RegisterPage = ({ history, setIsLoggedIn }) => {
         </div>
         <div className="downloadBlock">
           <label htmlFor="upload-photo">
-            <img
-              className="upload-image"
-              src="https://yandex-images.clstorage.net/XEI5T1218/4bc9af2fn/iog9c9nAslSKVhr1QnM4K5cbx_WwKTiIS_IXd2t0LJU4AhyHeXivzk_FNI8TP2KUuGlA8K6cwQiVxYm0rtsTjteRfEbprMtoolIa-XZXVA-LN-fJkDlolEKTSxorWGC4bSsF-3jdMgeCCcA_1vq6NAQUFZyrxLlt3MlsAJtezn9uMNGHyewXRKYuTy2eMyAj606XwZBkQBWDkj4OE_AZgGVfXMaEYQ6zNjH8t5Y2vpyIvD28H0hAyeh9VPkj3r5nUgi9hxlM56QK9gcFnuNkL2O-x60sRJTtu05CsgPQRci118y-nKWq195NEOMWOjr4JDzNKCtYsE2sncCdX96eUxLoaTsNQF94AhJfaQr7xCdDojOV9FTYtRMSgurz5AUYSRtcsnQ1Gq_GGbRPtm5qqBz8vRhnTGTZ0AmwpcNKivfSBI2nWTTfzP4iB5Huf4gfp36zgUw4UKEHhiqqY1TpPEGLjIKs-eKfQjEAUy4SdrgoULEgMzRkEZDhIOULuno_MmCdl7msJ_z6dgeJEnsEi2eqJ4E0QLwd0xZGzrPgBUApE3yGpD2q69rl1Bt2di6giEBZjAeY-MWYKXg9B-ZGu2r0mSsRMOOsVuJbefprjL8rpsvtCHy84ZuyAqZ3oDFIuYOYipB9DpMqPSiTAjqOwAQoVRifwACFwHG88bMe5heSRAUX2eDjoLr60-WOQ7Dja_YrxRj8MM3XDhZag0QJcJ2LpLog_UqLUtFosypSwpQg3CngM8B0gfQNnJm3Ku5HAoydEzkEU0ySJssJxiM4UyeSz0HMpFRxfxpaVn9ANQQlkxDWeEHS24KZkLv6fsZAtExJMK8cCN10pbh5y4Jew05MXcN5RFtArmKD9U6nNAsLkuMVDKwQgd-OyrZziGnYtUNcTmytUpvSTazfKnJ2KFzkuYQHHIydoEnINf_mdj_SgBGPORxrTCYuH1EO_7C3HxrTZbhAjGlXjqbWN3Qc"
-            ></img>
+            <CloudDownloadOutlined className="upload-image" />
           </label>
           <input
             type="file"

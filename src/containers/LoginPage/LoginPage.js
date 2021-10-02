@@ -13,7 +13,7 @@ export const LoginPage = ({
   history,
 }) => {
   const [password, setPassword] = useState("");
-  console.log("password", password);
+  const [error, setError] = useState(null);
 
   const handlePhoneChange = (e) => {
     setPhone(e.value);
@@ -41,7 +41,7 @@ export const LoginPage = ({
       setIsLoggedIn(true);
       history.push("/personal-area-page");
     } catch (error) {
-      console.warn(error.response);
+      setError(error.response.data.message);
     }
   };
 
@@ -116,6 +116,7 @@ export const LoginPage = ({
             Войти
           </button>
         </div>
+        {error && <p>{error}</p>}
         <div className="regBlock">
           <span className="register"> У вас нет аккаунта?</span>
           <Link to="/register" className="signup">

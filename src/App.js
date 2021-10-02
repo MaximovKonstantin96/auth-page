@@ -93,14 +93,24 @@ export function App() {
               exact
               path="/forgot-end"
               render={(props) => (
-                <ForgotEndPage {...props} phone={phone} setPhone={setPhone} />
+                <ForgotEndPage
+                  {...props}
+                  phone={phone}
+                  setPhone={setPhone}
+                  setIsLoggedIn={setIsLoggedIn}
+                />
               )}
             />
             <Route
               exact
               path="/register"
               render={(props) => (
-                <RegisterPage {...props} phone={phone} setPhone={setPhone} />
+                <RegisterPage
+                  {...props}
+                  phone={phone}
+                  setPhone={setPhone}
+                  setIsLoggedIn={setIsLoggedIn}
+                />
               )}
             />
             <Route
